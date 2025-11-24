@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: Criar Repositório no GitHub - &lt;LAB365/&gt Tutorials</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-animation"></div>
+
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <span class="logo-text">&lt;LAB365/&gt</span>
+      <span class="logo-subtitle">Tutorials</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+      <li><a href="tutorials.html" class="nav-link">Tutoriais</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <article class="tutorial-content">
+    <div class="container-narrow">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="tutorials.html">Tutoriais</a>
+        <span>/</span>
+        <span>Git & GitHub</span>
+      </div>
+
+      <header class="tutorial-header">
+        <div class="tutorial-badge">Git & GitHub</div>
+        <h1>Como Criar um Repositório e Subir Projeto no GitHub</h1>
+        <p class="tutorial-intro">
+          Neste tutorial, você vai aprender a usar Git e GitHub para versionar seus projetos.
+          Vamos desde a instalação e configuração inicial até fazer seu primeiro commit e push para o GitHub.
+        </p>
+      </header>
+
+      <div class="tutorial-steps">
+        <div class="step-card">
+          <div class="step-number">Passo 1</div>
+          <h2>Instalar o Git</h2>
+          <div class="step-content">
+            <p>Primeiro, você precisa instalar o Git no seu computador:</p>
+
+            <h3>Windows</h3>
+            <ol>
+              <li>Acesse <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com</a></li>
+              <li>Baixe o instalador</li>
+              <li>Execute o instalador e siga as instruções (pode deixar as opções padrão)</li>
+              <li>Após instalar, abra o "Git Bash" para usar os comandos</li>
+            </ol>
+
+            <h3>Mac</h3>
+            <div class="code-block">
+                                <pre><code># Instalar via Homebrew
+brew install git
+
+# Ou instalar via Xcode Command Line Tools
+xcode-select --install</code></pre>
+            </div>
+
+            <h3>Linux (Ubuntu/Debian)</h3>
+            <div class="code-block">
+                                <pre><code>sudo apt update
+sudo apt install git</code></pre>
+            </div>
+
+            <h3>Verificar Instalação</h3>
+            <div class="code-block">
+              <pre><code>git --version</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 2</div>
+          <h2>Configurar o Git</h2>
+          <div class="step-content">
+            <p>Configure seu nome e email (serão usados em todos os commits):</p>
+            <div class="code-block">
+                                <pre><code># Configurar nome
+git config --global user.name "Seu Nome"
+
+# Configurar email
+git config --global user.email "seu.email@exemplo.com"
+
+# Verificar configurações
+git config --list</code></pre>
+            </div>
+            <div class="tip">
+              <strong>Dica:</strong> Use o mesmo email que você vai usar no GitHub para que seus commits sejam associados à sua conta.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 3</div>
+          <h2>Criar Conta no GitHub</h2>
+          <div class="step-content">
+            <p>Se você ainda não tem uma conta no GitHub:</p>
+            <ol>
+              <li>Acesse <a href="https://github.com" target="_blank" rel="noopener">github.com</a></li>
+              <li>Clique em "Sign Up" no canto superior direito</li>
+              <li>Preencha os dados:
+                <ul>
+                  <li>Email (use o mesmo configurado no Git)</li>
+                  <li>Senha forte</li>
+                  <li>Nome de usuário (será sua URL: github.com/seuusuario)</li>
+                </ul>
+              </li>
+              <li>Verifique seu email</li>
+              <li>Complete o perfil (opcional, mas recomendado)</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 4</div>
+          <h2>Criar um Novo Repositório no GitHub</h2>
+          <div class="step-content">
+            <p>Agora vamos criar um repositório para hospedar seu projeto:</p>
+            <ol>
+              <li>No GitHub, clique no botão "+" no canto superior direito</li>
+              <li>Selecione "New repository"</li>
+              <li>Preencha as informações:
+                <ul>
+                  <li><strong>Repository name:</strong> nome-do-seu-projeto (sem espaços)</li>
+                  <li><strong>Description:</strong> breve descrição do projeto (opcional)</li>
+                  <li><strong>Public/Private:</strong> escolha a visibilidade</li>
+                  <li><strong>Initialize:</strong> NÃO marque nenhuma opção por enquanto</li>
+                </ul>
+              </li>
+              <li>Clique em "Create repository"</li>
+            </ol>
+            <div class="tip">
+              <strong>Importante:</strong> Guarde a URL do repositório que aparece (exemplo: https://github.com/seuusuario/nome-do-projeto.git)
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 5</div>
+          <h2>Inicializar Repositório Local</h2>
+          <div class="step-content">
+            <p>Agora vamos preparar seu projeto local para usar Git:</p>
+            <ol>
+              <li>Abra o terminal/prompt na pasta do seu projeto</li>
+              <li>Execute os seguintes comandos:</li>
+            </ol>
+            <div class="code-block">
+                                <pre><code># Inicializar repositório Git
+git init
+
+# Adicionar todos os arquivos
+git add .
+
+# Criar primeiro commit
+git commit -m "Commit inicial"
+
+# Renomear branch para main (padrão atual)
+git branch -M main</code></pre>
+            </div>
+            <div class="tip">
+              <strong>Explicação dos comandos:</strong>
+              <ul>
+                <li><code>git init</code> - Cria um repositório Git na pasta</li>
+                <li><code>git add .</code> - Adiciona todos os arquivos para serem commitados</li>
+                <li><code>git commit -m</code> - Cria um commit com uma mensagem</li>
+                <li><code>git branch -M main</code> - Define o branch principal como "main"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 6</div>
+          <h2>Conectar Repositório Local ao GitHub</h2>
+          <div class="step-content">
+            <p>Vamos conectar seu repositório local ao GitHub:</p>
+            <div class="code-block">
+                                <pre><code># Adicionar repositório remoto
+git remote add origin https://github.com/seuusuario/nome-do-projeto.git
+
+# Verificar se foi adicionado
+git remote -v</code></pre>
+            </div>
+            <div class="warning">
+              <strong>Atenção:</strong> Substitua a URL pela URL do seu repositório que você copiou no Passo 4!
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 7</div>
+          <h2>Enviar Código para o GitHub (Push)</h2>
+          <div class="step-content">
+            <p>Finalmente, vamos enviar seu código para o GitHub:</p>
+            <div class="code-block">
+                                <pre><code># Enviar código para o GitHub
+git push -u origin main</code></pre>
+            </div>
+            <p>Na primeira vez, o GitHub vai pedir autenticação:</p>
+            <ul>
+              <li><strong>Username:</strong> seu nome de usuário do GitHub</li>
+              <li><strong>Password:</strong> use um Personal Access Token (não a senha da conta)</li>
+            </ul>
+
+            <h3>Como criar um Personal Access Token</h3>
+            <ol>
+              <li>No GitHub, vá em Settings (ícone do perfil)</li>
+              <li>No menu lateral, vá em "Developer settings"</li>
+              <li>Clique em "Personal access tokens" → "Tokens (classic)"</li>
+              <li>Clique em "Generate new token" → "Generate new token (classic)"</li>
+              <li>Dê um nome ao token (ex: "Meu Computador")</li>
+              <li>Marque a opção "repo" (acesso total aos repositórios)</li>
+              <li>Clique em "Generate token"</li>
+              <li>Copie o token (você só verá ele uma vez!)</li>
+              <li>Use esse token como senha ao fazer push</li>
+            </ol>
+
+            <div class="success">
+              <strong>Sucesso!</strong> Seu código agora está no GitHub! Atualize a página do repositório para ver.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 8</div>
+          <h2>Fluxo de Trabalho Diário</h2>
+          <div class="step-content">
+            <p>Agora que seu projeto está no GitHub, use estes comandos para trabalhar no dia a dia:</p>
+
+            <h3>Quando fizer alterações no código</h3>
+            <div class="code-block">
+                                <pre><code># Ver arquivos modificados
+git status
+
+# Adicionar arquivos específicos
+git add arquivo.html
+
+# Ou adicionar todos os arquivos modificados
+git add .
+
+# Fazer commit com mensagem descritiva
+git commit -m "Adiciona nova funcionalidade"
+
+# Enviar para o GitHub
+git push</code></pre>
+            </div>
+
+            <h3>Baixar alterações do GitHub</h3>
+            <div class="code-block">
+                                <pre><code># Se você ou outra pessoa fez alterações no GitHub
+git pull</code></pre>
+            </div>
+
+            <h3>Ver histórico de commits</h3>
+            <div class="code-block">
+                                <pre><code># Ver histórico completo
+git log
+
+# Ver histórico resumido
+git log --oneline</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card bonus">
+          <div class="step-number">Extra</div>
+          <h2>Boas Práticas e Dicas</h2>
+          <div class="step-content">
+            <h3>Mensagens de Commit</h3>
+            <p>Escreva mensagens claras e descritivas:</p>
+            <div class="code-block">
+                                <pre><code># Bom
+git commit -m "Adiciona formulário de contato"
+git commit -m "Corrige bug no menu mobile"
+git commit -m "Atualiza estilos da página inicial"
+
+# Ruim
+git commit -m "alterações"
+git commit -m "fix"
+git commit -m "asdfasdf"</code></pre>
+            </div>
+
+            <h3>Arquivo .gitignore</h3>
+            <p>Crie um arquivo <code>.gitignore</code> na raiz do projeto para ignorar arquivos desnecessários:</p>
+            <div class="code-block">
+                                <pre><code># Arquivo .gitignore
+node_modules/
+.env
+.DS_Store
+*.log
+dist/
+build/</code></pre>
+            </div>
+
+            <h3>README.md</h3>
+            <p>Sempre crie um arquivo README.md para documentar seu projeto:</p>
+            <div class="code-block">
+                                <pre><code># Meu Projeto
+
+Descrição breve do projeto.
+
+## Como usar
+
+1. Clone o repositório
+2. Abra o index.html
+3. Aproveite!
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript</code></pre>
+            </div>
+
+            <h3>Comandos Úteis</h3>
+            <div class="code-block">
+                                <pre><code># Desfazer alterações em um arquivo
+git checkout -- arquivo.html
+
+# Desfazer último commit (mantém alterações)
+git reset --soft HEAD~1
+
+# Ver diferenças antes de commitar
+git diff
+
+# Criar e mudar para nova branch
+git checkout -b nova-feature
+
+# Clonar um repositório
+git clone https://github.com/usuario/repo.git</code></pre>
+            </div>
+
+            <h3>Solução de Problemas</h3>
+            <ul>
+              <li><strong>Erro ao fazer push:</strong> Certifique-se de ter feito commit antes de push</li>
+              <li><strong>Conflitos de merge:</strong> Faça pull antes de push para evitar conflitos</li>
+              <li><strong>Token expirado:</strong> Gere um novo Personal Access Token no GitHub</li>
+              <li><strong>Esqueceu de fazer commit:</strong> Use <code>git status</code> para ver o que falta</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-footer">
+        <a href="tutorials.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Voltar para Tutoriais</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 &lt;LAB365/&gt Tutorials. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

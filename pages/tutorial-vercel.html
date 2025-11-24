@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: Publicar Site na Vercel - &lt;LAB365/&gt Tutorials</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="bg-animation"></div>
+
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <span class="logo-text">&lt;LAB365/&gt</span>
+      <span class="logo-subtitle">Tutorials</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+      <li><a href="tutorials.html" class="nav-link">Tutoriais</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <article class="tutorial-content">
+    <div class="container-narrow">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="tutorials.html">Tutoriais</a>
+        <span>/</span>
+        <span>Vercel Deploy</span>
+      </div>
+
+      <header class="tutorial-header">
+        <div class="tutorial-badge">Deploy</div>
+        <h1>Como Publicar um Site na Vercel com Domínio Próprio</h1>
+        <p class="tutorial-intro">
+          Neste tutorial, você vai aprender como fazer o deploy do seu projeto na Vercel e configurar um domínio personalizado.
+          Vamos seguir um passo a passo completo, desde a criação da conta até seu site estar no ar com domínio próprio.
+        </p>
+      </header>
+
+      <div class="tutorial-steps">
+        <div class="step-card">
+          <div class="step-number">Passo 1</div>
+          <h2>Criar uma Conta na Vercel</h2>
+          <div class="step-content">
+            <p>Primeiro, você precisa criar uma conta na Vercel. Siga os passos abaixo:</p>
+            <ol>
+              <li>Acesse <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></li>
+              <li>Clique em "Sign Up" no canto superior direito</li>
+              <li>Escolha uma das opções de autenticação:
+                <ul>
+                  <li>GitHub (recomendado)</li>
+                  <li>GitLab</li>
+                  <li>Bitbucket</li>
+                  <li>Email</li>
+                </ul>
+              </li>
+              <li>Complete o processo de autenticação</li>
+              <li>Aceite os termos de serviço</li>
+            </ol>
+            <div class="tip">
+              <strong>Dica:</strong> Usar GitHub facilita muito o processo de deploy, já que a Vercel pode acessar seus repositórios automaticamente.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 2</div>
+          <h2>Preparar e Publicar seu Repositório</h2>
+          <div class="step-content">
+            <p>Antes de fazer o deploy, certifique-se de que seu projeto está em um repositório Git:</p>
+            <ol>
+              <li>Se ainda não tem, <a href="tutorial-github.html">crie um repositório no GitHub</a></li>
+              <li>Faça upload de todos os arquivos do seu projeto</li>
+              <li>Certifique-se de que o arquivo principal está na raiz (index.html, por exemplo)</li>
+              <li>Adicione um arquivo <code>.gitignore</code> se necessário</li>
+            </ol>
+            <div class="code-block">
+                                <pre><code># Exemplo de estrutura de projeto
+meu-projeto/
+├── index.html
+├── styles.css
+├── script.js
+├── images/
+└── README.md</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 3</div>
+          <h2>Fazer Deploy na Vercel</h2>
+          <div class="step-content">
+            <p>Agora vamos conectar seu repositório à Vercel e fazer o deploy:</p>
+            <ol>
+              <li>No dashboard da Vercel, clique em "New Project"</li>
+              <li>Clique em "Import Git Repository"</li>
+              <li>Selecione seu repositório da lista</li>
+              <li>Configure as opções do projeto:
+                <ul>
+                  <li><strong>Framework Preset:</strong> Selecione o framework usado (ou "Other" para HTML puro)</li>
+                  <li><strong>Root Directory:</strong> Deixe como "." se os arquivos estão na raiz</li>
+                  <li><strong>Build Command:</strong> Deixe vazio para projetos estáticos</li>
+                  <li><strong>Output Directory:</strong> Deixe vazio ou use "." para HTML puro</li>
+                </ul>
+              </li>
+              <li>Clique em "Deploy"</li>
+              <li>Aguarde o processo de build e deploy (geralmente leva menos de 1 minuto)</li>
+            </ol>
+            <div class="success">
+              <strong>Sucesso!</strong> Seu site agora está online em um domínio .vercel.app
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 4</div>
+          <h2>Comprar um Domínio (Registro.br)</h2>
+          <div class="step-content">
+            <p>Para ter um domínio personalizado .com.br, você precisa comprá-lo no Registro.br:</p>
+            <ol>
+              <li>Acesse <a href="https://registro.br" target="_blank" rel="noopener">registro.br</a></li>
+              <li>Na página inicial, digite o domínio desejado e clique em "Buscar"</li>
+              <li>Se o domínio estiver disponível, clique em "Registrar"</li>
+              <li>Crie uma conta ou faça login (será necessário CPF)</li>
+              <li>Preencha os dados de cadastro:
+                <ul>
+                  <li>Dados pessoais</li>
+                  <li>Endereço</li>
+                  <li>Telefone</li>
+                </ul>
+              </li>
+              <li>Escolha o período de registro (1 ano recomendado para começar)</li>
+              <li>Realize o pagamento via:
+                <ul>
+                  <li>Cartão de crédito</li>
+                  <li>Boleto bancário</li>
+                  <li>PIX</li>
+                </ul>
+              </li>
+            </ol>
+            <div class="tip">
+              <strong>Importante:</strong> Após a compra, você receberá um email de confirmação. O domínio pode levar algumas horas para ser ativado.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 5</div>
+          <h2>Configurar DNS do Domínio</h2>
+          <div class="step-content">
+            <p>Agora vamos configurar o DNS no Registro.br para apontar para a Vercel:</p>
+            <ol>
+              <li>Faça login no painel do <a href="https://registro.br" target="_blank" rel="noopener">Registro.br</a></li>
+              <li>Vá em "Meus Domínios" e selecione seu domínio</li>
+              <li>Clique em "Editar Zona" ou "DNS"</li>
+              <li>Remova todos os registros DNS existentes (se houver)</li>
+              <li>Adicione os seguintes registros DNS da Vercel:
+                <div class="code-block">
+                                        <pre><code>Tipo: A
+Nome: @
+Valor: 76.76.21.21
+TTL: 3600
+
+Tipo: CNAME
+Nome: www
+Valor: cname.vercel-dns.com
+TTL: 3600</code></pre>
+                </div>
+              </li>
+              <li>Salve as alterações</li>
+            </ol>
+            <div class="warning">
+              <strong>Atenção:</strong> As alterações de DNS podem levar de 4 a 48 horas para propagar completamente, mas geralmente ficam prontas em algumas horas.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">Passo 6</div>
+          <h2>Adicionar Domínio na Vercel</h2>
+          <div class="step-content">
+            <p>Por fim, vamos adicionar seu domínio personalizado no projeto da Vercel:</p>
+            <ol>
+              <li>No dashboard da Vercel, acesse seu projeto</li>
+              <li>Vá em "Settings" (Configurações)</li>
+              <li>No menu lateral, clique em "Domains"</li>
+              <li>Digite seu domínio (exemplo: meusite.com.br) e clique em "Add"</li>
+              <li>Adicione também a versão com www (www.meusite.com.br)</li>
+              <li>A Vercel vai verificar a configuração DNS</li>
+              <li>Aguarde a mensagem de confirmação</li>
+              <li>Configure redirecionamento (opcional):
+                <ul>
+                  <li>Marque uma das versões (com ou sem www) como principal</li>
+                  <li>A outra será automaticamente redirecionada</li>
+                </ul>
+              </li>
+            </ol>
+            <div class="success">
+              <strong>Parabéns!</strong> Seu site agora está acessível pelo seu domínio personalizado com HTTPS automático!
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card bonus">
+          <div class="step-number">Extra</div>
+          <h2>Dicas e Solução de Problemas</h2>
+          <div class="step-content">
+            <h3>Certificado SSL</h3>
+            <p>A Vercel automaticamente provisiona um certificado SSL gratuito (HTTPS) para seu domínio. Isso pode levar alguns minutos após adicionar o domínio.</p>
+
+            <h3>Deploy Automático</h3>
+            <p>Cada vez que você fizer um push no branch principal do seu repositório, a Vercel automaticamente fará um novo deploy. Isso é muito útil para atualizações rápidas!</p>
+
+            <h3>Problemas Comuns</h3>
+            <ul>
+              <li><strong>Domínio não funciona:</strong> Verifique se os registros DNS estão corretos e aguarde a propagação</li>
+              <li><strong>Erro 404:</strong> Certifique-se de que o arquivo index.html está na raiz do projeto</li>
+              <li><strong>Build falhou:</strong> Verifique os logs de build na Vercel para identificar o erro</li>
+              <li><strong>CSS/JS não carrega:</strong> Verifique os caminhos dos arquivos (devem ser relativos)</li>
+            </ul>
+
+            <h3>Comandos Úteis</h3>
+            <div class="code-block">
+                                <pre><code># Instalar Vercel CLI (opcional)
+npm install -g vercel
+
+# Deploy via CLI
+vercel
+
+# Deploy para produção
+vercel --prod</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-footer">
+        <a href="tutorials.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Voltar para Tutoriais</span>
+        </a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 &lt;LAB365/&gt Tutorials. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
